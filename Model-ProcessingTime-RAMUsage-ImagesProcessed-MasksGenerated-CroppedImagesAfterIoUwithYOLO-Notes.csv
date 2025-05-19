@@ -1,6 +1,0 @@
-"Model","Processing Time","RAM Usage","Images Processed","Masks Generated","Cropped Images (After IoU with YOLO)","Notes"
-"SAM ViT-B","102.65 seconds","4.01 GB","6","~194","Higher","Fastest, fewer masks"
-"SAM ViT-L","327.20 seconds","3.69 GB","9","~265","Highest","Best accuracy-speed tradeoff"
-"SAM ViT-H","375.39 seconds","5.59 GB","8","~265","High","Most accurate, slowest"
-"SAM 2.1","419.23 seconds","4.73 GB","5","~16","Low (~5)","Newer model, fewer masks"
-"SAM 2","401.43 seconds","3.11 GB","5","~16","Low (~5)","Optimized RAM, similar masks"
