@@ -9,7 +9,7 @@ masks = sam.predict(image)
 M = [m[&#39;segmentation&#39;] for m in masks if m[&#39;score&#39;] &gt; 0.7]
 
 Each mask is a binary segmentation map representing the region of the object in the image.
-3) Now we often have a single object being split into multiple masks. To counter it we have
+2) Now we often have a single object being split into multiple masks. To counter it we have
 to merge those pieces into a unified mask per object.
 a) Object Detection Guided Merging using OWL-ViT (Preferred)
 Instead of YOLO, which is limited to COCO’s 80 pre defined classes, we use YOLOv8 World, an
@@ -28,7 +28,7 @@ This approach ensures masks corresponding to the same object are grouped based o
 spatial location relative to the detected bounding boxes.
 
 3) Object Cropping:
-4) 
+   
 Once we have a merged mask corresponding to a single object, we proceed to crop the
 relevant region from the original image.
 
@@ -43,8 +43,8 @@ cropped = image[y:y+h, x:x+w]
 To maintain uniformity in input dimensions (especially if required by the captioning
 model), we may optionally pad or resize the cropped object.
 
-5) Feed Cropped Objects to DAM:
-6) 
+4) Feed Cropped Objects to DAM:
+   
 We use a Description Auto-Model (DAM) to generate captions for each cropped object. The
 DAM could be based on:
 - BLIP-2
@@ -56,11 +56,11 @@ generating meaningful natural language descriptions.
 description = dam.generate(cropped)
 
 5) Post Processing:
-6) 
+
 Once we have raw captions generated for the objects, we post-process them in two stages:
 
 1) Counter duplication:
-2) 
+
 Often, visually similar or identical objects will result in repeated or near-identical captions.
 To remove these:
 from sklearn.metrics.pairwise import cosine_similarity
