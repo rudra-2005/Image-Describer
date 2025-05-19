@@ -47,6 +47,7 @@ These models are capable of understanding the visual content of the cropped obje
 generating meaningful natural language descriptions.
 
 description = dam.generate(cropped)
+
 5) Post Processing
 Once we have raw captions generated for the objects, we post-process them in two stages:
 1) Counter duplication
