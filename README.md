@@ -98,21 +98,6 @@ refined_desc = openai.ChatCompletion.create(
 - **Applicable in zero-shot settings**
 - **Modular design for easy customization**
 
----
-
-## 📁 Folder Structure
-
-```
-.
-├── segment.py       # SAM-based mask generation
-├── detect.py        # YOLO World detection
-├── merge.py         # Mask merging logic
-├── crop.py          # Object cropping module
-├── caption.py       # BLIP-2 / LLaVA caption generation
-├── refine.py        # GPT-4 post-processing
-├── utils/           # Helper functions
-└── README.md        # This file
-```
 
 ---
 
@@ -127,31 +112,4 @@ refined_desc = openai.ChatCompletion.create(
 - OpenAI GPT-4 API access
 - CLIP for duplicate detection
 
-Install dependencies:
-```bash
-pip install -r requirements.txt
-```
 
----
-
-## 🚀 Run the Pipeline
-
-```bash
-python main.py --image input.jpg
-```
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## 🙌 Acknowledgments
-
-- Meta AI for Segment Anything
-- Ultralytics for YOLO World
-- Salesforce for BLIP-2
-- LLaVA Team
-- OpenAI for GPT-4
